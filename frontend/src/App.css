@@ -1,0 +1,71 @@
+/* App.css */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #f5f7fa;
+}
+
+.container {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.search-form {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.search-form input {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  font-size: 1rem;
+}
+
+.search-form button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 0 4px 4px 0;
+  transition: background 0.2s ease;
+}
+
+.search-form button:hover {
+  background-color: #0056b3;
+}
+
+.loading {
+  text-align: center;
+  color: #666;
+}
+
+.article {
+  background: #fafafa;
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid #eee;
+}
+
+.article h2 {
+  margin-top: 0;
+  color: #222;
+}
+
+.article p {
+  line-height: 1.6;
+  white-space: pre-wrap;
+  color: #444;
+}
