@@ -2,7 +2,8 @@ from fastapi  import FastAPI, HTTPException
 from app.database import engine, SessionLocal, Base
 from app.models import Topic
 from app.schemas import TopicCreate, TopicRead
-from fastapi.middlewares.cors import CORSMiddleware
+from app.scraper import scrape_wikipedia
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 Base.metadata.create_all(bind=engine)
@@ -39,3 +40,6 @@ def get_topic(topic_id: int):
         raise HTTPException(status_code=404, detail="Topic not found")
     return topic
 
+@app.get("/")
+def get_hola():
+    return "Hola, mundo!"
