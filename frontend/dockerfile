@@ -1,0 +1,14 @@
+FROM node:20
+
+# directorio
+WORKDIR /app
+
+# copiar archivos
+COPY . .
+
+# instalar dependencias
+RUN npm install && npm run build
+
+RUN npm install -g serve
+# exponer el puerto
+CMD ["serve", "-s", "build", "-l", "3000"]
