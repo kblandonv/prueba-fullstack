@@ -4,21 +4,23 @@ services:
   backend:
     build:
       context: ./backend
+      dockerfile: Dockerfile
     ports:
-      - "8001:8000"
-    volumes:
-      - ./backend:/app
+      - '8001:8000'        # Exponer el puerto 8000 del backend en el 8001 del host
     networks:
       - app-network
-
 
   frontend:
     build:
       context: ./frontend
+      dockerfile: Dockerfile
     ports:
-      - "3000:3000"
+      - '3003:3000'        # React DevServer mapeado en el puerto 3003 del host
     depends_on:
       - backend
+    environment:
+      # Fuerza a React a usar polling para hot‐reload en Docker 
+      - CHOKIDAR_USEPOLLING=true
     networks:
       - app-network
 

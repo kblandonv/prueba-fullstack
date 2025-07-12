@@ -1,16 +1,17 @@
 FROM python:3.11
 
-WORKDIR backend/app
+# 1) Define el directorio de trabajo
+WORKDIR /app
 
-# 1) Copia e instala dependencias
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+# 2) Copia e instala las dependencias primero
+COPY requirements.txt /app/
+RUN pip install --no-cache-dir -r /app/requirements.txt
 
-# 2) Copia el código de tu aplicación
-COPY app/ ./app
+# 3) Copia TODO el código de tu backend
+COPY . /app
 
-# 3) Documenta el puerto que usarás (opcional)
+# 4) Expón el puerto (documentación)
 EXPOSE 8000
 
-# 4) Comando que arranca FastAPI
+# 5) Manda a ejecutar tu servidor
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]

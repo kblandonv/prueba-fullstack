@@ -10,7 +10,7 @@ function App() {
   const handleSearch = async (topic) => {
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:8000/topics/", {
+      const res = await fetch("http://localhost:8001/topics/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name: topic }),
