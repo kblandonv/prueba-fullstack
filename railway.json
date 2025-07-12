@@ -1,0 +1,18 @@
+{
+  "services": [
+    {
+      "type": "docker",
+      "name": "backend",
+      "buildDirectory": "backend",
+      "dockerfilePath": "Dockerfile",
+      "port": 8000
+    },
+    {
+      "type": "docker",
+      "name": "frontend",
+      "buildDirectory": "frontend",
+      "dockerfilePath": "Dockerfile",
+      "port": 3000
+    }
+  ]
+}
